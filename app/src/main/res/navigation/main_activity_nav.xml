@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/person">
+
+    <fragment
+        android:id="@+id/person"
+        android:name="com.example.personsapp.ui.fragments.Person"
+        android:label="fragment_person"
+        tools:layout="@layout/fragment_person" >
+        <action
+            android:id="@+id/personToRegisterPerson"
+            app:destination="@id/registerPerson" />
+        <action
+            android:id="@+id/personToDetailPerson"
+            app:destination="@id/detailPerson" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPerson"
+        android:name="com.example.personsapp.ui.fragments.RegisterPerson"
+        android:label="fragment_register_person"
+        tools:layout="@layout/fragment_register_person" />
+    <fragment
+        android:id="@+id/detailPerson"
+        android:name="com.example.personsapp.ui.fragments.DetailPerson"
+        android:label="fragment_detail_person"
+        tools:layout="@layout/fragment_detail_person" >
+        <argument
+            android:name="kisi"
+            app:argType="com.example.personsapp.data.entity.Kisiler" />
+    </fragment>
+</navigation>
